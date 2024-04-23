@@ -407,3 +407,131 @@ hr{
         }
     }
 }
+
+
+
+/* ESTILOS ESCRITORIO PARA PAGINA InicioSesion */
+.bodyInicioSesion {
+    height: 100vh;
+    background: linear-gradient(to right top, #24242473,#24242473),url(../assets/img/bg-register.jpg);
+    background-size: cover;
+    background-position: center;
+    .mainInicioSesion {
+        .seccionInicioSesion {
+            background-color: rgb(42, 42, 42);
+            width: 30%;
+            margin: 0 auto;
+            border-radius: 5px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            font-size: 1.2rem;
+            .tituloInicioSesion {
+                font-size: 2.5rem;
+                font-weight: 700;
+                margin-bottom: 20px;
+                color: #fff;
+            }
+            form {
+                width: 100%;
+                padding: 40px;
+                input:not(.botonInicioSesion) {
+                    width: 100%;
+                    margin-bottom: 20px;
+                    height: 40px;
+                    padding: 0px 20px;
+                    font-size: 1.2rem;
+                    border-radius: 20px;
+                    border: 2px solid #369eb8;
+                    background-color: #333;
+                    outline: none;
+                    color: white;
+                }
+                
+                .botonInicioSesion {
+                    width: 87%;
+                    box-sizing: content-box;
+                    background-color: #369eb8;
+                    border: 2px solid #369eb8;
+                    color: #fff;
+                    padding: 1rem 1rem;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+                .LnkReg{
+                    border-bottom: 1px solid #369eb8;
+                    margin-top: 40px;
+                    font-size: 1rem;
+                    text-decoration: none;
+                    color: #787878;
+                    font-weight: 400;
+                }
+            }
+        }
+    }                
+}
+
+/* media querys para PAGINA InicioSesion */
+@media (max-width: 1200px) {
+    .bodyInicioSesion {
+        .mainInicioSesion {
+            .seccionInicioSesion {
+                width: 60%;
+                padding: 10px 10px;
+                .tituloInicioSesion {
+                    font-size: 2rem;
+                }
+                form {
+                    width: 100%;
+                    text-align: center;
+
+                    input:not(.botonInicioSesion) {
+                        width: 80%;
+                        height: 35px;
+                        font-size: 1rem;
+                    }
+                    
+                    .botonInicioSesion {
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                        width: 70%;
+                        padding: 0.8rem 0.8rem;
+                        font-size: 0.8rem;
+                    }
+                    .LnkReg {
+                        text-align: left;
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .bodyInicioSesion {
+        header {
+            .navegacion {
+                .listaNav {
+                    .listaItem {
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+        .mainInicioSesion {
+            .seccionInicioSesion {
+                width: 90%;
+            }
+        }
+    }
+}
+
+
+
+
+
