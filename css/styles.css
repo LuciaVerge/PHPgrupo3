@@ -75,6 +75,66 @@ header{
     object-fit: cover;
 }
 
+.description{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 90vh;
+    background: linear-gradient(90deg,black,transparent);
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 4.2rem;
+        margin: 2% 15%;
+    }
+    p{
+        margin: 3% 18%;
+        color: #ffffff;
+        font-size: 1.5rem;
+    }
+}
+
+.boton{
+    display: inline-block;
+    color:#030303;
+    height: 50px;
+    margin: 20px 10px;
+    padding:0 20px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 2px solid white;
+    text-align: center;
+    /* Agregar efecto de botón presionado */
+    transition: transform 0.3s, box-shadow 0.3s;
+    
+}
+
+.ver{
+    background-color:#369eb8;
+    &:hover {
+        background-color: #dadddd;
+        color: #000;
+        transform: scale(0.95);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.mas{
+    background-color: #ffffff73;
+    &:hover {
+        background-color: #dadddd;
+        color: #000;
+        transform: scale(0.95);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+}
 
 .buscadorPrincipal{
     background-color: #000000;
