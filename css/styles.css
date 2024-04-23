@@ -43,7 +43,7 @@ header{
                     font-weight: 700;
                     font-size: 1.1rem;
                     padding: 0.5rem 1rem;
-                    
+                    /* Agregar efecto de botón presionado */
                     transition: transform 0.3s, box-shadow 0.3s;
                     &:hover {
                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -54,6 +54,7 @@ header{
                     background-color: #181419;
                     color: white;
                     border-radius: 5px;
+                    /* Agregar efecto de botón presionado */
                      transition: transform 0.3s, box-shadow 0.3s;
                      &:hover {
                          background-color: #369eb8c5;
