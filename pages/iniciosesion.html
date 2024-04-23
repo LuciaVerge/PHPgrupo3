@@ -11,17 +11,24 @@
     <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body class="bodyRegistrarse">
-    <header class="headerRegistrarse">
-        <a class="anclaLogo" href="../index.html">
-            <i class="fas fa-film" aria-hidden="true"></i>
-            <span>Movies Grupo 3</span>
-        </a>
+<body class="bodyInicioSesion">
+    <header>
+        <nav class="navegacion">
+            <a class="anclaLogo animate__animated animate__flip" href="../index.html">
+                <i class="fas fa-film" aria-hidden="true"></i>
+                <span>Movies Grupo 3</span>
+            </a>
+            <ul class="listaNav">
+                <li class="listaItem"><a class="linkNav" href="./pages/milista.html">Mi Lista</a></li>
+                <li class="listaItem"><a class="linkNav" href="./pages/registro.html">Registrarse</a></li>
+                <li class="listaItem"><a class="linkNav iniciarSesion" href="./pages/iniciosesion.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
     </header>
-    <main id="main" class="main">
-            <section class="seccionRegistrarse animate__animated animate__zoomIn">
+    <main class="mainInicioSesion">
+            <section class="seccionInicioSesion animate__animated animate__zoomIn">
             <form action="" method="post">
-                <h2 class="tituloRegistrarse">Iniciar Sesion</h2>
+                <h2 class="tituloInicioSesion">Iniciar Sesion</h2>
                 <div>
                     <input type="email" placeholder="Email" required id="email" name="email">
                 </div>
@@ -29,10 +36,10 @@
                     <input type="password" placeholder="Contraseña" required id="password" name="password">
                 </div>
                 <div>
-                    <input type="submit" class="boton" value="Iniciar Sesion">
+                    <input type="submit" class="botonInicioSesion" value="Iniciar Sesion">
                 </div>
                 <div>
-                    <a href="registrarse.html" class="ayuda" id="ayuda">Registrarse</a>
+                    <a href="registrarse.html" class="LnkReg">Registrarse</a>
                 </div>
             </form>
         </section>
