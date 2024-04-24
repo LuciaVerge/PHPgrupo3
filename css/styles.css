@@ -535,12 +535,16 @@ header{
   
   .seriesTendencia{
     width: 95%;
-    .serie{
-        width: 100%;
-        .series{
+    .series{
+        a{
             width: 100%;
-            
+            .serie{
+                width: 100%;
+                height: 500px;
+                
+            }
         }
+        
     }
     
   }
