@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Grupo 3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navegacion">
+            <a class="anclaLogo animate__animated animate__flip" href="./index.html">
+                <i class="fas fa-film" aria-hidden="true"></i>
+                <span>Movies Grupo3</span>
+            </a>
+            <ul class="listaNav">
+                <li class="listaItem"><a class="linkNav" href="./pages/milista.html">Mi Lista</a></li>
+                <li class="listaItem"><a class="linkNav" href="./pages/registro.html">Registrarse</a></li>
+                <li class="listaItem"><a class="linkNav iniciarSesion" href="./pages/iniciosesion.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="main" class="main">
+        <section class="carrusel">
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" ></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" ></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" ></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="./assets/img/carrousel/01.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption description d-none d-md-block">
+                        <h1>La Sociedad de la Nieve</h1>
+                        <p>Según El Mundo, esta conmovedora película nominada a un Globo de Oro sobre el accidente aéreo de 1972 en los Andes es "espectacularmente hipnotizante".</p>
+                      <div>
+                        <button class="boton ver">Ver Ahora</button> 
+                        <button class="boton mas">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/img/carrousel/02.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption description d-none d-md-block">
+                      <h1>Wonka</h1>
+                      <p>Fantasía musical sobre Willy Wonka (Timothée Chalamet) antes de convertirse en el mayor fabricante de chocolate y caramelos de todo el mundo.</p>
+                      <div>
+                        <button class="boton ver">Ver Ahora</button>
+                        <button class="boton mas">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/img/carrousel/03.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption description d-none d-md-block">
+                      <h1>Poor Things</h1>
+                      <p>La historia increíble y la evolución fantástica de Bella Baxter, una joven que volvió a la vida gracias a un científico genial pero poco ortodoxo. </p>
+                      <div>
+                        <button class="boton ver">Ver Ahora</button>
+                        <button class="boton mas">+</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <img src="./assets/img/carrousel/04.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption description d-none d-md-block">
+                    <h1>Dark</h1>
+                    <p>2019.La desaparición de un niño local aterroriza a los habitantes de Widen, un pueblito alemán con una historia tan trágica como extraña.</p>
+                    <div>
+                        <button class="boton ver">Ver Ahora</button>
+                        <button class="boton mas">+</button>
+                    </div>
+                  </div>
+                </div>
+                </div> 
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
+        <section data-aos="fade-up" data-aos-offset="300" data-aos-delay="50" data-aos-duration="1000" class="buscadorPrincipal">
+            <h2 class="tituloSection">¿Qué estás buscando?</h2>
+            <form class="buscadorPeliculas">
+                <input class="inputBuscador" type="text" placeholder="Ingresa un nombre"/>
+                <input class="botonBuscador" type="submit" value="Buscar">
+            </form>
+        </section>
+        <hr>
+        <section id="series" data-aos="fade-up" data-aos-offset="400" data-aos-delay="100" data-aos-duration="1000" class="seriesTendencia">
+          <h3 class="tituloSection">Series</h3>
+          <div class="series">
+              <a href="./pages/detalle.html">
+                  <div class="serie">
+                      <img class="imgTendencia" src="./assets/img/series/02.jpg" alt="Stranger Things" loading="lazy">
+                      <div class="tituloPelicula">
+                          <h4>Stranger Things</h4>
+                      </div>
+                  </div>
+              </a>
+              <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/series/13.png" alt="Coppola" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>Coppola</h4>
+                    </div>
+                </div>
+            </a>
+              <a href="./pages/detalle.html">
+                  <div class="serie">
+                      <img class="imgTendencia" src="./assets/img/series/03.jpeg" alt="Dexter" loading="lazy">
+                      <div class="tituloPelicula">
+                          <h4>Dexter</h4>
+                      </div>
+                  </div>
+              </a>
+              <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/series/14.jpg" alt="El Oso" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>El Oso</h4>
+                    </div>
+                </div>
+            </a>
+              <a href="./pages/detalle.html">
+                  <div class="serie">
+                      <img class="imgTendencia" src="./assets/img/series/04.jpg" alt="The Boys" loading="lazy">
+                      <div class="tituloPelicula">
+                          <h4>The Boys</h4>
+                      </div>
+                  </div>
+              </a>
+              <a href="./pages/detalle.html">
+                  <div class="serie">
+                      <img class="imgTendencia" src="./assets/img/series/05.jpg" alt="Breaking Bad" loading="lazy">
+                      <div class="tituloPelicula">
+                              <h4>Breaking Bad</h4>
+                      </div>
+                  </div>
+                 
+              </a>
+              <a href="./pages/detalle.html">
+                  <div class="serie">
+                      <img class="imgTendencia" src="./assets/img/series/07.jpg" alt="Narcos" loading="lazy">
+                      <div class="tituloPelicula">
+                          <h4>Narcos</h4>
+                      </div>
+                  </div>
+              </a>
+              <a href="./pages/detalle.html">
+                  <div class="serie">
+                      <img class="imgTendencia" src="./assets/img/series/08.jpg" alt="Game of Thrones" loading="lazy">
+                      <div class="tituloPelicula">
+                          <h4>Game of Thrones</h4>
+                      </div>
+                  </div>
+              </a>
+              <a href="./pages/detalle.html">
+                  <div class="serie">
+                      <img class="imgTendencia" src="./assets/img/series/09.jpg" alt="Arrow" loading="lazy">
+                      <div class="tituloPelicula">
+                          <h4>Arrow</h4>
+                      </div>
+                  </div>
+              </a>
+              <a href="./pages/detalle.html">
+                  <div class="serie">
+                      <img class="imgTendencia" src="./assets/img/series/10.jpg" alt="La Casa de Papel" loading="lazy">
+                      <div class="tituloPelicula">
+                          <h4>La Casa de Papel</h4>
+                      </div>
+                  </div>
+              </a>
+              <a href="./pages/detalle.html">
+                  <div class="serie">
+                      <img class="imgTendencia" src="./assets/img/series/11.jpg" alt="Dark" loading="lazy">
+                      <div class="tituloPelicula">
+                          <h4>Dark</h4>
+                      </div>
+                  </div>
+              </a>
+              <a href="./pages/detalle.html">
+                  <div class="serie">
+                      <img class="imgTendencia" src="./assets/img/series/12.jpg" alt="Ragnarok" loading="lazy">
+                      <div class="tituloPelicula">
+                          <h4>Ragnarok</h4>
+                      </div>
+                  </div>
+              </a>
+          </div>
+          <button class="boton anterior">Anterior</button>  
+          <button class="boton siguiente">Siguiente</button>
+      </section>
+      <hr>
+      <section id="peliculas" data-aos="fade-up" data-aos-offset="400" data-aos-delay="100" data-aos-duration="1000" class="seriesTendencia">
+        <h3 class="tituloSection">Peliculas</h3>
+        <div class="series">
+            <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/peliculas/01.jpg" alt="Poor Things" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>Poor Things</h4>
+                    </div>
+                </div>
+            </a>
+            <a href="./pages/detalle.html">
+              <div class="serie">
+                  <img class="imgTendencia" src="./assets/img/peliculas/06.jpg" alt="John Wick" loading="lazy">
+                  <div class="tituloPelicula">
+                      <h4>John Wick</h4>
+                  </div>
+              </div>
+          </a>
+            <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/peliculas/13.jpg" alt="Harry Potter" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>Harry Potter</h4>
+                    </div>
+                </div>
+            </a>
+            <a href="./pages/detalle.html">
+              <div class="serie">
+                  <img class="imgTendencia" src="./assets/img/peliculas/14.jpg" alt="Sherlock Holmes" loading="lazy">
+                  <div class="tituloPelicula">
+                      <h4>Sherlock Holmes</h4>
+                  </div>
+              </div>
+          </a>
+            <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/peliculas/15.jpg" alt="Wonka" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>Wonka</h4>
+                    </div>
+                </div>
+            </a>
+            <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/peliculas/16.jpeg" alt="Intensamente 2" loading="lazy">
+                    <div class="tituloPelicula">
+                            <h4>Intensamente 2</h4>
+                    </div>
+                </div>
+               
+            </a>
+            <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/peliculas/17.jpg" alt="La Sociedad de la Nieve" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>La Sociedad de la Nieve</h4>
+                    </div>
+                </div>
+            </a>
+            <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/peliculas/18.jpg" alt="Madame Web" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>Madame Web</h4>
+                    </div>
+                </div>
+            </a>
+            <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/peliculas/19.jpeg" alt="Instinto Maternal" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>Instinto Maternal</h4>
+                    </div>
+                </div>
+            </a>
+            <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/peliculas/21.jpeg" alt="Joker 2" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>Joker 2</h4>
+                    </div>
+                </div>
+            </a>
+            <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/peliculas/23.png" alt="Beetlejuice 2" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>Beetlejuice 2</h4>
+                    </div>
+                </div>
+            </a>
+            <a href="./pages/detalle.html">
+                <div class="serie">
+                    <img class="imgTendencia" src="./assets/img/peliculas/25.jpg" alt="Garfield" loading="lazy">
+                    <div class="tituloPelicula">
+                        <h4>Garfield</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <button class="boton anterior">Anterior</button>  
+        <button class="boton siguiente">Siguiente</button>
+    </section>
+    <hr>
+    <section data-aos="fade-up" data-aos-offset="200" data-aos-delay="100" data-aos-duration="2000" class="top10">
+      <h3 class="tituloSection">Top 10 Argentina</h3>
+       <div class="aclamadas">
+          <div class="peliculaItem">
+              <img class="rnk" src="./assets/img/ranking-numbers/01.png" alt="aclamada_1" loading="lazy">
+              <img class="imgAclamada" src="./assets/img/top10/aclamada_1.jpg" alt="aclamada_1" loading="lazy">
+          </div>
+          <div class="peliculaItem">
+              <img class="rnk" src="./assets/img/ranking-numbers/02.png" alt="aclamada_2" loading="lazy">
+              <img class="imgAclamada" src="./assets/img/top10/aclamada_2.jpg" alt="aclamada_2" loading="lazy">
+          </div>
+          <div class="peliculaItem">
+              <img class="rnk" src="./assets/img/ranking-numbers/03.png" alt="aclamada_3" loading="lazy">
+              <img class="imgAclamada" src="./assets/img/top10/aclamada_3.jpg" alt="aclamada_3" loading="lazy">
+          </div>
+          <div class="peliculaItem">
+              <img class="rnk" src="./assets/img/ranking-numbers/04.png" alt="aclamada_4" loading="lazy">
+              <img class="imgAclamada" src="./assets/img/top10/aclamada_4.jpg" alt="aclamada_4" loading="lazy">
+          </div>
+          <div class="peliculaItem">
+              <img class="rnk" src="./assets/img/ranking-numbers/05.png" alt="aclamada_5" loading="lazy">
+              <img class="imgAclamada" src="./assets/img/top10/aclamada_5.jpg" alt="aclamada_5" loading="lazy">
+          </div>
+          <div class="peliculaItem">
+              <img class="rnk" src="./assets/img/ranking-numbers/06.png" alt="aclamada_6" loading="lazy">
+              <img class="imgAclamada" src="./assets/img/top10/aclamada_6.jpg" alt="aclamada_6" loading="lazy">
+          </div>
+          <div class="peliculaItem">
+              <img class="rnk" src="./assets/img/ranking-numbers/07.png" alt="aclamada_7" loading="lazy">
+              <img class="imgAclamada" src="./assets/img/top10/aclamada_7.jpg" alt="aclamada_7" loading="lazy">
+          </div>
+          <div class="peliculaItem">
+              <img class="rnk" src="./assets/img/ranking-numbers/08.png" alt="aclamada_8" loading="lazy">
+              <img class="imgAclamada" src="./assets/img/top10/aclamada_8.jpg" alt="aclamada_8" loading="lazy">
+          </div>
+          <div class="peliculaItem">
+              <img class="rnk" src="./assets/img/ranking-numbers/09.png" alt="aclamada_9" loading="lazy">
+              <img class="imgAclamada" src="./assets/img/top10/aclamada_9.jpg" alt="aclamada_9" loading="lazy">
+          </div>
+          <div class="peliculaItem">
+              <img class="rnk" src="./assets/img/ranking-numbers/10.png" alt="aclamada_10" loading="lazy">
+              <img class="imgAclamada" src="./assets/img/top10/aclamada_10.jpg" alt="aclamada_10" loading="lazy">
+          </div>               
+      </div>
+  </section>
+    </main>
+    <footer>
+      <footer class="footer">
+        <nav class="navegacion">
+            <ul class="listaNav">
+                <li class="listaItem"><a class="linkNav" href="">Términos y condiciones</a></li>
+                <li class="listaItem"><a class="linkNav" href="">Preguntas frecuentes</a></li>
+                <li class="listaItem"><a class="linkNav" href="">Ayuda</a></li>
+                <li class="listaItem"><a class="linkNav administradorPeliculas" href="">Administrador Peliculas</a></li>
+            </ul>
+        </nav>
+        <a href="#main" class="flechaArriba">
+            <img src="./assets/img/flecha-hacia-arriba.png" alt="ir arriba flecha">
+        </a>
+    </footer>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+</body>
+</html>
