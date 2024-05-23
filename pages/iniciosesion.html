@@ -27,13 +27,13 @@
     </header>
     <main class="mainInicioSesion">
             <section class="seccionInicioSesion animate__animated animate__zoomIn">
-            <form action="" method="post">
+            <form id="formInicioSesion" action="" method="post">
                 <h2 class="tituloInicioSesion">Iniciar Sesion</h2>
                 <div>
-                    <input type="email" placeholder="Email" required id="email" name="email">
+                    <input type="email" placeholder="Email" id="email" name="email">
                 </div>
                 <div>
-                    <input type="password" placeholder="Contraseña" required id="password" name="password">
+                    <input type="password" placeholder="Contraseña" id="password" name="password">
                 </div>
                 <div>
                     <input type="submit" class="botonInicioSesion" value="Iniciar Sesion">
@@ -44,5 +44,6 @@
             </form>
         </section>
     </main>
+    <script src="../js/validacion.js"></script>
 </body>
 </html>
