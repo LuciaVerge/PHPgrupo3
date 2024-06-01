@@ -543,6 +543,12 @@ header{
                     color: #787878;
                     font-weight: 400;
                 }
+                .error-message {
+                    color: yellow;
+                    font-size: 0.8em;
+                    /* margin-top: 0.4rem; 
+                    margin-bottom: 0.4rem; */
+                }
             }
         }
     }                
@@ -728,4 +734,321 @@ header{
             }
         }
     }
+}
+
+/*PÁGINA REGISTRO*/
+ 
+.body-registrarse {
+    height: 100vh;
+    background: linear-gradient(to right top, #24242473, #24242473), url(../assets/img/bg-register.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.anclaLogo {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.main {
+    .seccionRegistrarse {
+        background-color:#2a2a2a;
+        width: 30%;
+        margin:0 auto;
+        border-radius: 5px;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        font-size:1.2rem;
+
+        .tituloRegistrarse {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        form {
+            width: 100%;
+            padding:40px;
+
+            input:not(.check,.boton),select {
+                width: 100%;
+                margin-bottom: 20px;
+                height: 40px;
+                padding: 0px 20px;
+                font-size: 1.2rem;
+                border-radius: 20px;
+                border: 2px solid #369eb8c5;
+                background-color: #333333;
+                outline: none;
+                color:white;
+            }
+
+            .terminos {
+                font-size: 0.8rem;
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                color: #ffffff;
+
+                .textoCheck {
+                    margin-left: 10px;
+                }
+            }
+
+            .boton {
+                width: 87%;
+                box-sizing: content-box;
+                background-color:#369eb8c5;
+                border: 2px solid #369eb8c5;
+                color: #ffffff;
+                padding: 1rem 1rem;
+                border-radius: 5px;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .boton:hover {
+                background-color: #1ab5dcc5;
+                border: 2px solid #1ab5dcc5;
+            }
+
+            .ayuda {
+                margin-top:40px;
+                font-size: 1rem;
+                text-decoration: none;
+                color: #787878;
+                font-weight:400;
+                
+            }      
+        }
+    }
+} 
+  
+/* en Chrome */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1); 
+}
+
+/*en Firefox */
+input[type="date"]::-moz-calendar-picker-indicator {
+    filter: invert(1); 
+}
+
+/*media queries página registro*/
+@media (max-width: 1200px) {
+    .body-registrarse {
+        .headerRegistrarse {
+            padding:20px;
+            .anclaLogo {
+                font-size: 1rem;
+            }
+        }
+        .main {
+            .seccionRegistrarse{
+                width: 95%;
+                padding: 10px 10px;
+                .tituloRegistrarse {
+                    font-size: 2rem;
+                }
+               form {
+                width: 100%;
+                text-align: center;
+               
+                input:not(.check,.boton),select {
+                    width: 86%;
+                    height: 35px;
+                    font-size: 1rem;
+                }
+                .terminos {
+                    width: 80%;
+                    margin:0 auto;
+                    font-size: 0.7rem;
+                }
+                .boton {
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    width: 70%;
+                    padding: 0.8rem 0.8rem;
+                    font-size: 0.8rem;
+                }
+                .ayuda {
+                    text-align: left;
+                    font-size: 0.8rem;
+                }
+               }               
+            }
+        }
+    }
+}
+
+/*Pág Detalle*/
+
+.main-detalle {
+    
+    .detalle {
+        padding-top:50px;
+        background:linear-gradient(to right top, #566262a7, #566565a7),url("../assets/img/mario-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 70vh;
+        .contenedor-detalle{
+            width:75%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 60px;
+            img {
+              border-radius: 20px;
+            }
+            .texto-detalle {
+                h1{
+                    font-size: 2.2rem;
+                    font-weight: 700;
+                }
+                h2{
+                    margin-top:20px;
+                }
+                .contenedorCreditos{
+                    margin-top: 35px;
+                    display: block;
+                }
+                .creditos {
+                    margin-top: 15px;
+                }
+            }
+        }
+    }
+
+    .trailer {
+        padding-top:150px;
+        padding-bottom: 100px;
+        width:75%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 70px;
+        .contenedorInfo {
+            .redes {
+                margin-bottom: 20px;
+                ul {
+                    list-style: none;
+                    display: flex;
+                    column-gap: 20px;
+                    li {
+                        a {
+                            text-decoration: none;
+                            color: #ffffff;
+                            font-size: 2.5rem;
+                            margin-right: 50px;
+                        }
+                    }  
+                }
+            }
+            .info {
+                table {
+                    width: 100%;
+                    tr {
+                        td {
+                            font-size: 1rem;
+                            padding: 10px 0px;
+                        }
+                        th {  
+                            text-align:left;
+                            font-size: 1.3rem;
+                            padding-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/* media queries Página Detalle*/
+@media screen and (max-width:1200px) {
+    .main-detalle {
+        .detalle {
+            height: initial;
+            .contenedor-detalle {
+                flex-direction: column;
+                row-gap: 20px;
+                img {
+                    width: 100%;
+                    height: 300px;
+                }
+                .texto-detalle {
+                    h1 {
+                        font-size: 1.5rem;
+                    }
+                    h2 {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+        .trailer {
+            width:95%;
+            padding-top:50px;
+            padding-bottom: 50px;
+            flex-direction: column;
+            row-gap: 20px;
+            .contenedor-trailer {
+                width: 100%;
+                h2 {
+                    margin-bottom: 20px;
+                }
+                iframe {
+                    width: 100%;
+                    height: 300px;
+                
+                }
+            }
+            .contenedorInfo {
+                width: 100%;
+                .redes {
+                    width: 100% ;
+                    ul {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                       
+                        li {
+                            a {
+                                font-size: 2rem;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+                .info {
+                    table {
+                        tr {
+                            td {
+                                font-size: 1rem;
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+hr {
+    border: 1px solid #9f3647;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 40px; 
 }

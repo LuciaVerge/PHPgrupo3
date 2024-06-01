@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies Grupo 3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f7fb471b65.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    
+</head>
+    
+<body class="body-registrarse">
+    <header>
+        <nav class="navegacion">
+            <a class="anclaLogo animate__animated animate__flip" href="../index.html">
+                <i class="fas fa-film" aria-hidden="true"></i>
+                <span>Movies Grupo3</span>
+            </a>
+            <ul class="listaNav">
+                <li class="listaItem"><a class="linkNav" href="../pages/milista.html">Mi Lista</a></li>
+                <li class="listaItem"><a class="linkNav iniciarSesion" href="../pages/iniciosesion.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main  id="main" class="main">
+      <section  data-aos="zoom-in"  data-aos-duration="1000" class="seccionRegistrarse">
+        <form  action="" method="post">
+            <h2 class="tituloRegistrarse">Registro</h2>
+            <div>
+                <input type="text" placeholder="Nombre" required id="nombre" name="nombre">
+            </div>
+            <div>
+                <input type="text" placeholder="Apellido" required id="apellido" name="apellido">
+            </div>
+            <div>
+                <input type="email" placeholder="Email" required id="email" name="email">
+            </div>
+            <div>
+                <input type="password" placeholder="Contraseña" required id="password" name="password">
+            </div>
+            <div>
+                <input type="date" placeholder="Fecha de Nacimiento (dd/mm/aaaa)" required id="fechaNacimiento" name="fechaNacimiento">
+            </div>
+            <div>
+                <select name="pais" id="pais" required>
+                    <option value="" disabled selected hidden>País</option>
+                    <option value="AR">Argentina</option>
+                    <option value="BO">Bolivia</option>
+                    <option value="BR">Brasil</option>
+                    <option value="CH">Chile</option>
+                    <option value="CO">Colombia</option>
+                    <option value="EC">Ecuador</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="PE">Perú</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="VE">Venezuela</option>
+                </select>
+            </div>
+            <div class="terminos" >
+                <input class="check" type="checkbox" id="terminos">
+                <label class="textoCheck" for="terminos">Acepto términos y condiciones</label>
+            </div>
+            <div>
+                <input  class="boton" type="submit" value="Registrarse">
+            </div>
+           
+            <div > 
+                <a class="ayuda" href="#">Necesitas ayuda?</a>
+            </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script> AOS.init(); </script>
+</body>
+</html>
