@@ -1,13 +1,15 @@
 <?php
+header("Content-Type: application/json");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
+header("Access-Control-Allow-Headers: Content-Type");
 
 include 'db.php';
 include 'Peliculas.php';
 
-$method=$_SERVER['REQUEST_METHOD'];
+$method = $_SERVER['REQUEST_METHOD'];
 
-
-switch($method)
-{
+switch ($method) {
     case 'GET':
         handleGet($conn);
         break;
@@ -17,56 +19,48 @@ switch($method)
     case 'PUT':
         handlePut($conn);
         break;
-    case 'DELETE':
+    case 'DELETE':        
         handleDelete($conn);
         break;
     default:
-        echo json_encode(['message'=>'Metodo no permitido']);
+        echo json_encode(['message' => 'Método no permitido']);
         break;
 }
 
-
-
-//Este metodo tiene que devolver todas o una pelicula
-function handleGet($conn)
+//este metodo me devuelve una pelicula o todas las peliculas
+function handleGet($conn) 
 {
-    $id=isset($_GET['id']) ? intval($_GET['id']) : 0;  //preguntamos si la variable existe, si existe la convierte en entero y si no existe la convierte en 0
+    $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
-    if($id>0) //si existe el id 
+    if ($id > 0) 
     {
-        //entonces devuelvo una pelicula segun el id proporcionado
-        $smtp=$conn->prepare("SELECT * FROM  peliculas WHERE id = ?"); //consulta precompilada
-        $smtp->execute([$id]);
-        $pelicula=$smtp->fetch(PDO::FETCH_ASSOC);
+        $stmt = $conn->prepare("SELECT * FROM peliculas WHERE id = ?");
+        $stmt->execute([$id]);
+        $pelicula = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if($pelicula)
+        if ($pelicula) 
         {
-            $peliculaObj=Peliculas::fromArray($pelicula);
+            $peliculaObj = Peliculas::fromArray($pelicula);
             echo json_encode($peliculaObj->toArray());
-        }
-        else
+        } 
+        else 
         {
             http_response_code(404);
-            echo json_encode(['message'=>'No se encontro pelicula']);
+            echo json_encode(['message' => 'No se encontraron datos']);
         }
-    }
-    else
+    } 
+    else 
     {
-        //devuelvo todas las peliculas
-        $smtp=$conn->query("SELECT * FROM  peliculas"); 
-        $peliculas=$smtp->fetchAll(PDO::FETCH_ASSOC);
-        $peliculaObjs=array_map(fn($pelicula)=>Peliculas::fromArray($pelicula)->toArray(),$peliculas);
-        echo json_encode(['peliculas'=>$peliculaObjs]);
+        $stmt = $conn->query("SELECT * FROM peliculas");
+        $peliculas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $peliculaObjs = array_map(fn($pelicula) => Peliculas::fromArray($pelicula)->toArray(), $peliculas);
+        echo json_encode(['peliculas' => $peliculaObjs]);
     }
 }
 
 
-
-
-
-
-//Metodo para ingresar peliculas
-function handlePost($conn)
+//este metodo es para ingresar peliculas
+function handlePost($conn) 
 {
     if ($conn === null) 
     {
@@ -74,24 +68,25 @@ function handlePost($conn)
         return;
     }
 
-    $data= json_decode(file_get_contents('php://input'),true);
-    $requiredFields=['titulo','fecha_lanzamiento','genero'];  
+    $data = json_decode(file_get_contents('php://input'), true);
 
-    foreach($requiredFields as $field)  //quiero hacer una validacion desde el backend
+    $requiredFields = ['titulo', 'fecha_lanzamiento','genero' ];
+
+    foreach ($requiredFields as $field) 
     {
-        if(!isset($data[$field])){
-            echo json_encode(['message'=>'Datos incompletos']);
+        if (!isset($data[$field])) 
+        {
+            echo json_encode(['message' => 'Datos de la película incompletos']);
             return;
         }
     }
 
-    $pelicula=Peliculas::fromArray($data);
+    $pelicula = Peliculas::fromArray($data);
 
-    try
+    try 
     {
-        $smtp=$conn->prepare("INSERT INTO peliculas (titulo,fecha_lanzamiento,genero,duracion,director,reparto,sinopsis) VALUES (?,?,?,?,?,?,?)");
-
-        $smtp->execute([
+        $stmt = $conn->prepare("INSERT INTO peliculas (titulo, fecha_lanzamiento, genero, duracion, director, reparto, sinopsis) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([
             $pelicula->titulo,
             $pelicula->fecha_lanzamiento,
             $pelicula->genero,
@@ -99,116 +94,95 @@ function handlePost($conn)
             $pelicula->director,
             $pelicula->reparto,
             $pelicula->sinopsis
+           
         ]);
 
-        echo json_encode(['message'=>'Pelicula ingresada correctamente']);
-    }
-    catch(PDOException $e)
+        echo json_encode(['message' => 'Película ingresada correctamente']);
+    } 
+    catch (PDOException $e) 
     {
-        echo json_encode(['message'=>'Error al ingresar pelicula', 'error'=> $e->getMessage()]);
+        echo json_encode(['message' => 'Error al ingresar la película', 'error' => $e->getMessage()]);
     }
-
 }
 
 
 
-
-//Metodo para actualizar peliculas
-function handlePut($conn)
+function handlePut($conn) 
 {
-    $id=isset($_GET['id']) ? intval($_GET['id']) : 0;
-    if ($id>0)
+    $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+    if ($id > 0) 
     {
-        $data= json_decode(file_get_contents('php://input'),true);
-        $pelicula=Peliculas::fromArray($data);  //convierto el dato json decodificado en un objeto tipo pelicula
-        $pelicula->id=$id;
+        $data = json_decode(file_get_contents('php://input'), true);
+        $pelicula = Peliculas::fromArray($data);
+        $pelicula->id = $id;
 
-        $field=[];
-        $params=[];
+        $fields = [];
+        $params = [];
 
-        if($pelicula->titulo!==null)
+        if ($pelicula->titulo !== null) 
         {
-            $field[]='titulo=?';
-            $params[]=$pelicula->titulo;
+            $fields[] = 'titulo = ?';
+            $params[] = $pelicula->titulo;
         }
+        if ($pelicula->genero !== null) {
+            $fields[] = 'genero = ?';
+            $params[] = $pelicula->genero;
+        }
+        if ($pelicula->fecha_lanzamiento !== null) {
+            $fields[] = 'fecha_lanzamiento = ?';
+            $params[] = $pelicula->fecha_lanzamiento;
+        }
+        if ($pelicula->duracion !== null) {
+            $fields[] = 'duracion = ?';
+            $params[] = $pelicula->duracion;
+        }
+        if ($pelicula->director !== null) {
+            $fields[] = 'director = ?';
+            $params[] = $pelicula->director;
+        }
+        if ($pelicula->reparto !== null) {
+            $fields[] = 'reparto = ?';
+            $params[] = $pelicula->reparto;
+        }
+        if ($pelicula->sinopsis !== null) {
+            $fields[] = 'sinopsis = ?';
+            $params[] = $pelicula->sinopsis;
+        }                 
 
-        if($pelicula->genero!==null)
+        if (!empty($fields)) 
         {
-            $field[]='genero=?';
-            $params[]=$pelicula->genero;
-        }
-
-        if($pelicula->fecha_lanzamiento!==null)
+            $params[] = $id;
+            $stmt = $conn->prepare("UPDATE peliculas SET " . implode(', ', $fields) . " WHERE id = ?");
+            $stmt->execute($params);
+            echo json_encode(['message' => 'Película actualizada con éxito']);
+        } 
+        else 
         {
-            $field[]='fecha_lanzamiento=?';
-            $params[]=$pelicula->fecha_lanzamiento;
+            echo json_encode(['message' => 'No hay campos para actualizar']);
         }
-
-        if($pelicula->duracion!==null)
-        {
-            $field[]='duracion=?';
-            $params[]=$pelicula->duracion;
-        }
-
-        if($pelicula->director!==null)
-        {
-            $field[]='director=?';
-            $params[]=$pelicula->director;
-        }
-
-        if($pelicula->reparto!==null)
-        {
-            $field[]='reparto=?';
-            $params[]=$pelicula->reparto;
-        }
-
-        if($pelicula->sinopsis!==null)
-        {
-            $field[]='sinopsis=?';
-            $params[]=$pelicula->sinopsis;
-        }
-
-        if(!empty($field))
-        {
-            $params[]=$id;
-            $smtp=$conn->prepare("UPDATE peliculas SET ".implode(',',$field)."where id=?");
-            $smtp->execute($params);
-            echo json_encode(['message'=>'La pelicula se actualizo con exito']);
-
-        }
-        else{
-            echo json_encode(['message'=>'No hay campos para actualizar']);
-        }
-
-
-    }
-    else
+    } 
+    else 
     {
-        echo json_encode(['message'=>'ID no encontrado']);
+        echo json_encode(['message' => 'ID no proporcionado']);
     }
 }
 
 
-
-
-
-//Metodo para eliminar peliculas
-function handleDelete($conn)
+//metodo para borrar registros
+function handleDelete($conn) 
 {
-    $id=isset($_GET['id']) ? intval($_GET['id']) : 0;
-    
-    if($id>0)
+    $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
+
+    if ($id > 0) 
     {
-        $smtp=$conn->prepare("DELETE * FROM  peliculas WHERE id = ?"); //consulta precompilada
-        $smtp->execute([$id]);
-        echo json_encode(['message'=>'Pelicula eliminada con exito']);
-    }else
+        $stmt = $conn->prepare("DELETE FROM peliculas WHERE id = ?");
+        $stmt->execute([$id]);
+        echo json_encode(['message' => 'Película eliminada con éxito']);
+    } 
+    else 
     {
-        echo json_encode(['message'=>'Id no encontrado']);
+        echo json_encode(['message' => 'ID no proporcionado']);
     }
-
-
 }
-
-
 ?>
