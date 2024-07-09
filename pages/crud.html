@@ -29,7 +29,7 @@
         </nav>
     </header>
     <main id="main" class="main">
-        <section class="sectionFormulario">
+        <section class="sectionFormulario" style="margin: 5% 10%;">
             <br>
             <!-- Formulario -->
              <form id="itemForm" class="mb-4">
@@ -37,46 +37,44 @@
                     <div class="col">
                         <input type="hidden" id="id" name="id">
                         <div class="form-group">
-                            <label for="titulo">Titulo:</label>
+                            <label for="titulo" style="color: #369eb8;">Titulo:</label>
                             <input type="text" class="form-control" id="titulo" name="titulo" required>
                         </div>
                         <div class="form-group">
-                            <label for="fecha_lanzamiento">Fecha lanzamiento:</label>
+                            <label for="fecha_lanzamiento" style="color: #369eb8;">Fecha lanzamiento:</label>
                             <input type="date" class="form-control" id="fecha_lanzamiento" name="fecha_lanzamiento" required>
                         </div>
                         <div class="form-group">
-                            <label for="genero">Genero:</label>
+                            <label for="genero" style="color: #369eb8;">Genero:</label>
                             <input type="text" class="form-control" id="genero" name="genero" required>
                         </div>
                         <div class="form-group">
-                            <label for="duracion">Duracion:</label>
-                            <!-- <input type="text" class="form-control" id="duracion" name="duracion" required> -->
+                            <label for="duracion" style="color: #369eb8;">Duracion:</label>
                             <input type="text" class="form-control" id="duracion" name="duracion">
                         </div>
                         <div class="form-group">
-                            <label for="director">Director:</label>
-                            <!-- <input type="text" class="form-control" id="director" name="director" required> -->
+                            <label for="director" style="color: #369eb8;">Director:</label>
                             <input type="text" class="form-control" id="director" name="director">
                         </div>
                         <div class="form-group">
-                            <label for="reparto">Reparto:</label>
-                            <!-- <input type="text" class="form-control" id="reparto" name="reparto" required> -->
+                            <label for="reparto" style="color: #369eb8;">Reparto:</label>
                             <input type="text" class="form-control" id="reparto" name="reparto">
                         </div>
                         <div class="form-group">
-                            <label for="sinopsis">Sinopsis:</label>
-                            <!-- <input type="text" class="form-control" id="sinopsis" name="sinopsis" required> -->
+                            <label for="sinopsis" style="color: #369eb8;">Sinopsis:</label>
                             <input type="text" class="form-control" id="sinopsis" name="sinopsis">
                         </div>
                     </div>
                     <div class="col">
                         <div class="form-group">
-                            <label for="imagen">Imagen:</label>
+                            <label for="imagen" style="color: #369eb8;">Imagen:</label>
                             <input type="file" accept="image/*" class="form-control" id="imagen" name="imagen">
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-outline-light">Guardar</button>
+                <button type="submit" class="btn btn-outline-light" style="margin-top: 3%;" 
+                onmouseover="this.style.backgroundColor='#369eb8';" 
+                onmouseout="this.style.backgroundColor='';">Guardar</button>
              </form>
         </section>
 
